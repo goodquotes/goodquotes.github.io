@@ -1,2 +1,2 @@
-# https-goodquotes.github.io-
+# goodquotes.github.io
 Good Quotes
