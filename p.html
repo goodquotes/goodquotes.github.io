@@ -1,0 +1,44 @@
+<!-- https://staragdash.akamaized.net/hbo/goths/4/7846875395/1770005174.vtt --><html>   
+<head>   
+    <title> E4 The Last of the Starks </title>   
+    <meta name="theme-color" content="#19388A">   
+    <link rel="icon" href="../assets/favi.png" sizes="32x32" />      
+    <link rel="icon" href="../assets/favi.png" sizes="192x192" />  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">   
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8.4.0/bitmovinplayer.js"></script>  
+    <style> body{margin:0} .bmpui-ui-watermark{display:none;}</style>  
+</head>   
+<body>   
+<div id="my-player"></div>   
+<script type="text/javascript">   
+
+var config = { 
+    key: 'e8beff98-c240-43a6-997e-9745ede390fb', 
+}; 
+var container = document.getElementById('my-player');   
+var player = new bitmovin.player.Player(container, config);   
+
+var source = {   
+        dash: 'https://staragdash.akamaized.net/hbo/goths/4/7846875395/master.mpd?hdnea=st=1557163665~exp=1557167265~acl=/*~hmac=bbea92db12586751936b8787100eb33dcf67634ae054e9a065fd828b67a6ce2c',
+        drm: { 
+            widevine: { 
+                LA_URL: 'https://ipl.service.expressplay.com/hms/wv/rights/?ExpressPlayToken=BAAAABNlKdAAAABgLpCGhJrCxT7H3Totkizd9xvizICn29Ldp5ccZBhbNFo5XRkqkhhw1LqYUoq0H2nud97O9B12cn7eM4yTaqAmmeSYWH_1GbeghzGTD6OQtE3uGTY2TmndCnb8h3fogPBHdDOGXYzmZfhi6hb8yzcPP0iKD1M', 
+                prepareMessage: function (keyMessage) { 
+                    return keyMessage.message; 
+                } 
+            } 
+        } 
+};   
+
+player.load(source).then(   
+  function(player) {   
+    console.log('Successfully created Bitmovin Player instance');   
+  },   
+  function(reason) {   
+    console.log('Error while creating Bitmovin Player instance');   
+  }   
+);   
+
+</script> 
+
+
